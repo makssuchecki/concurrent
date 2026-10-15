@@ -13,8 +13,6 @@ while True:
     except ValueError:
         print("x musi być liczbą całkowitą")
 
-open(WYNIKI, "w").close()
-
 with open(DANE, "w") as f:
     f.write(f"{x}\n")
 
@@ -30,5 +28,5 @@ while True:
     if content.strip():
         print("Wynik:", content.strip())
         break
-    
+
     time.sleep(0.2)
