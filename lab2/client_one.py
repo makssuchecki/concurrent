@@ -32,8 +32,8 @@ while True:
     except OSError as e:  
         if e.errno != errno.EEXIST:  
             raise   
-        time.sleep(SLEEP_TIME)
         print("Serwer zajety prosze czekac")   
+        time.sleep(SLEEP_TIME)
 
 
 with open(BUFOR, "w", encoding="utf-8") as f:
