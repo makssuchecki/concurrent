@@ -45,7 +45,7 @@ except OSError as oe:
     if (oe.errno != errno.EEXIST):
         raise
 
-fifo_in = os.open(FIFO.os.O_RDONLY)
+fifo_in = os.open(FIFO, os.O_RDONLY)
 
 fifo_out1 = os.open(FIFO, os.O_WRONLY | os.O_NDELAY)
 
