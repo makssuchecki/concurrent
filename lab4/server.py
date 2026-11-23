@@ -5,7 +5,7 @@ import sys
 import signal
 import struct
 
-FIFO = "kolejka"
+FIFO = "/tmp/kolejka"
 
 opoznienie = 5
 
@@ -62,7 +62,7 @@ while True:
     odp = szukaj(id).encode()
     try:
         fifo_klienta = os.open(sciezka, os.O_WRONLY)
-        os.write(fifo_klienta, struct.pack('i', len(odp)) + odp)  # jedno os.write
+        os.write(fifo_klienta, struct.pack('i', len(odp)) + odp)
         os.close(fifo_klienta)
     except OSError as oe:
         print('Serwer: nie można odpowiedzieć klientowi: %s' % oe)

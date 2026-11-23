@@ -2,11 +2,11 @@ import os
 import sys
 import struct
 
-FIFO = 'kolejka_serwera'
+FIFO = '/tmp/kolejka'
 
 id = int(sys.argv[1])
 
-moja_kolejka = os.path.abspath('kolejka_klienta_%d' % os.getpid())
+moja_kolejka = '/tmp/kolejka_klienta_%d' % os.getpid()
 os.mkfifo(moja_kolejka)
 
 tresc = struct.pack('i', id) + moja_kolejka.encode()
